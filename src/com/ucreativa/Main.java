@@ -10,6 +10,13 @@ public class Main {
 
         Violeta madre = new Violeta ("Hola mi chiquita");
 
+        madre.setAge();
+
+        int age = madre.getAge();
+
+        System.out.println("Acabo de cumplir " + age);
+        System.out.println("Y mi hobby favorito es: " + madre.getHobby());
+
 	    //System.out.println("Hola clase");
     }
 }
