@@ -1,10 +1,10 @@
 package com.ucreativa.familia;
 
 
-public class Gabriela {
+public class Gabriela extends Violeta {
 
-    public Gabriela(){
 
-        System.out.println("Hola profesor, yo soy Gabriela");
+    public Gabriela(String saludo) {
+        super(saludo);
     }
 }
