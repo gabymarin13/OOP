@@ -1,6 +1,6 @@
-package com.ucreativa.vacunacion;
+package com.ucreativa.vacunacion.entities;
 
-public class Familiar extends Persona{
+public class Familiar extends Persona {
 
         private String parentesco;
 

@@ -1,4 +1,4 @@
-package com.ucreativa.vacunacion;
+package com.ucreativa.vacunacion.entities;
 
 public class Persona {
 
