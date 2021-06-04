@@ -17,4 +17,8 @@ public class Familiar extends Persona {
         this.parentesco = parentesco;
     }
 
+    @Override
+    public String toString() {
+        return this.parentesco;
+    }
 }

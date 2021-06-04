@@ -52,7 +52,7 @@ public class Main {
             print = in.nextLine();
             if(print.equals("S")){
                 for (BitacoraVacuna item : bitacora){
-                    System.out.println(item.getPersona().getNombre() + " fue vacunado el: " + item.getFecha());
+                    System.out.println(item.getPersona().toString() + " " + item.getPersona().getNombre() + " fue vacunado el: " + item.getFecha());
                 } //end for
             } //end if
         } //end while

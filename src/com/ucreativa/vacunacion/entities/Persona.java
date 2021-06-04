@@ -1,6 +1,6 @@
 package com.ucreativa.vacunacion.entities;
 
-public class Persona {
+public abstract class Persona {
 
     private String nombre;
     private String cedula;
@@ -13,6 +13,8 @@ public class Persona {
         this.edad = edad;
         this.riesgo = riesgo;
     }
+
+    public abstract String toString();
 
     public String getNombre(){
         return nombre;

@@ -12,6 +12,10 @@ public class Amigo extends Persona {
         this.facebook = facebook;
     }
 
+    @Override
+    public String toString() {
+        return this.relacion;
+    }
 
     public String getRelacion() {
         return relacion;
@@ -28,4 +32,6 @@ public class Amigo extends Persona {
     public void setFacebook(String facebook) {
         this.facebook = facebook;
     }
+
+
 }
