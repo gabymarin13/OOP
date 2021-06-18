@@ -7,6 +7,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 
+import static javax.swing.JOptionPane.*;
+
 public class FrontEnd extends JFrame {
 
     public FrontEnd(String titulo){
@@ -80,22 +82,28 @@ public class FrontEnd extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 BitacoraService service = new BitacoraService(new FileRepository());
-                service.save(txtNombre.getText(), txtCedula.getText(), txtEdad.getText(),
-                             txtRiesgo.isSelected(), txtEsAmigo.isSelected(), txtRelacion.getText(),
-                             txtFacebook.getText(), txtParentesco.getText(), txtMarca.getText());
+                try {
+                    service.save(txtNombre.getText(), txtCedula.getText(), txtEdad.getText(),
+                            txtRiesgo.isSelected(), txtEsAmigo.isSelected(), txtRelacion.getText(),
+                            txtFacebook.getText(), txtParentesco.getText(), txtMarca.getText());
 
-                txtNombre.setText("");
-                txtCedula.setText("");
-                txtEdad.setText("");
-                txtRiesgo.setText("");
-                txtEsAmigo.setText("");
-                txtRelacion.setText("");
-                txtFacebook.setText("");
-                txtParentesco.setText("");
-                txtMarca.setText("");
+                    txtNombre.setText("");
+                    txtCedula.setText("");
+                    txtEdad.setText("");
+                    txtRiesgo.setText("");
+                    txtEsAmigo.setText("");
+                    txtRelacion.setText("");
+                    txtFacebook.setText("");
+                    txtParentesco.setText("");
+                    txtMarca.setText("");
 
-                String reporte = String.join("\n", service.get());
-                JOptionPane.showMessageDialog(((JButton)e.getSource()).getParent(),reporte);
+                    String reporte = String.join("\n", service.get());
+                    JOptionPane.showMessageDialog(((JButton)e.getSource()).getParent(),reporte);
+                } catch (ErrorDeEdadException x) {
+                    JOptionPane.showMessageDialog(((JButton)e.getSource()).getParent(), x.getMessage());
+                }
+
+
             }
         });
 
